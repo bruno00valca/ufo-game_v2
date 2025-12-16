@@ -1,0 +1,56 @@
+<div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+  <form
+    class="p-4 border rounded-4 bg-dark text-light shadow-lg"
+    style="width: 100%; max-width: 400px;"
+    (ngSubmit)="login()"
+  >
+    <fieldset>
+      <legend class="text-center mb-4 fw-bold text-info">Login</legend>
+
+      <div class="mb-3">
+        <label for="username" class="form-label">User</label>
+        <input
+          type="text"
+          id="username"
+          class="form-control"
+          placeholder="User identifier..."
+          [(ngModel)]="username"
+          name="username"
+        />
+      </div>
+      
+
+      <div class="mb-3">
+        <label for="pwd" class="form-label">Password</label>
+        <input
+          type="password"
+          id="pwd"
+          class="form-control"
+          placeholder="********"
+          [(ngModel)]="password"
+          name="password"
+        />
+      </div>
+
+      <div class="text-center mt-4">
+        <button type="submit" class="btn btn-primary px-4">
+          <i class="bi bi-send"></i> Send
+        </button>
+      </div>
+
+      <div class="text-center mt-3">
+        <span>¿No tienes cuenta?</span>
+        <a routerLink="/register" class="text-info ms-1">
+          Regístrate
+        </a>
+      </div>
+      
+    </fieldset>
+  </form>
+</div>
+
+<div id="result">
+  <div *ngIf="message" [ngClass]="alertClass" class="alert mt-3">
+    {{ message }}
+  </div>
+</div>
