@@ -2,14 +2,15 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { environment } from '../../environments/environment';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { AuthService } from '../../services/auth.service';
+
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html'
 })
 export class LoginComponent {
+
   username = '';
   password = '';
 
@@ -18,10 +19,11 @@ export class LoginComponent {
 
   constructor(
     private http: HttpClient,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) {}
 
-  login() {
+  login(): void {
     this.message = '';
 
     if (!this.username || !this.password) {
@@ -43,16 +45,22 @@ export class LoginComponent {
       next: response => {
         const token = response.headers.get('Authorization');
 
-        if (token) {
-          localStorage.setItem('jwt', token);
+        if (!token) {
+          this.message = 'Login failed: no token received.';
+          this.alertClass = 'alert-danger';
+          return;
         }
+
+        this.authService.login(token);
+        this.authService.storageUserName(params.username);
+
 
         this.message = 'Login successful!';
         this.alertClass = 'alert-success';
 
         setTimeout(() => {
           this.router.navigate(['/home']);
-        }, 1500);
+        }, 1000);
       },
       error: _err => {
         this.message = 'Login failed.';

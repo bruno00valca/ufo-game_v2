@@ -4,6 +4,8 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { PreferencesComponent } from './components/preferences/preferences.component';
+import { PlayComponent } from './components/play/play.component';
+import { RecordsComponent } from './components/records/records.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -11,6 +13,8 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'home', component: HomeComponent },
   { path: 'preferences', component: PreferencesComponent },
+  { path: 'play', component: PlayComponent },
+  { path: 'records', component: RecordsComponent },
   
   { path: '**', redirectTo: 'home' },
 ];
