@@ -16,7 +16,7 @@ export class RecordsService {
 
     getUserRecords(username: string): Observable<any[]> {
         return this.http.get<any[]>(
-            `http://localhost:3000/records/${username}`
+            `${environment.localApiBaseUrl}/records/${username}`
         );
     }
 }
