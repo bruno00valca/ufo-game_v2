@@ -11,15 +11,19 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PreferencesComponent } from './components/preferences/preferences.component';
+import { PlayComponent } from './components/play/play.component';
+import { RecordsComponent } from './components/records/records.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     LoginComponent,
-    RegisterComponent,
-    PreferencesComponent,
     NavbarComponent,
-    HomeComponent
+    PlayComponent,
+    PreferencesComponent,
+    RecordsComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

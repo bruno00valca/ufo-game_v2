@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html'
 })
 export class RegisterComponent {
+  constructor(
+    private router: Router
+  ){}
 
   username = '';
   email = '';
@@ -47,6 +51,7 @@ export class RegisterComponent {
       if (response.status === 201) {
         this.message = 'User registered successfully!';
         this.alertClass = 'alert alert-success mt-3';
+        this.router.navigate(['/login']);
       }
     } catch (error: any) {
       this.message = `Registration failed. ${error.message}`;
