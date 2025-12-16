@@ -31,15 +31,15 @@ export class AuthService {
   }
 
   storageUserName(username: string): void {
-    console.log('user:',username);
-    localStorage.setItem(this.USER_NAME,username);
+    console.log('user:', username);
+    localStorage.setItem(this.USER_NAME, username);
   }
 
   getUsername(): string | null {
     return localStorage.getItem(this.USER_NAME);
   }
 
-  getToken():string | null{
+  getToken(): string | null {
     return localStorage.getItem(this.TOKEN_KEY);
   }
 }

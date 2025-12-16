@@ -21,7 +21,7 @@ export class LoginComponent {
     private http: HttpClient,
     private router: Router,
     private authService: AuthService
-  ) {}
+  ) { }
 
   login(): void {
     this.message = '';

@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'preferences', component: PreferencesComponent },
   { path: 'play', component: PlayComponent },
   { path: 'records', component: RecordsComponent },
-  
+
   { path: '**', redirectTo: 'home' },
 ];
 

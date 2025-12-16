@@ -1,9 +1,6 @@
 <div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
-  <form
-    class="p-4 border rounded-4 bg-dark text-light shadow-lg"
-    style="width: 100%; max-width: 400px;"
-    (ngSubmit)="savePreferences()"
-  >
+  <form class="p-4 border rounded-4 bg-dark text-light shadow-lg" style="width: 100%; max-width: 400px;"
+    (ngSubmit)="savePreferences()">
     <fieldset>
       <legend class="text-center mb-4 fw-bold text-info">
         🎮 Game Preferences
@@ -11,12 +8,7 @@
 
       <div class="mb-3">
         <label for="numUfos" class="form-label">Number of UFOs</label>
-        <select
-          id="numUfos"
-          class="form-select bg-secondary text-light border-0"
-          [(ngModel)]="numUfos"
-          name="numUfos"
-        >
+        <select id="numUfos" class="form-select bg-secondary text-light border-0" [(ngModel)]="numUfos" name="numUfos">
           <option [ngValue]="1">1</option>
           <option [ngValue]="5">5</option>
           <option [ngValue]="9">9</option>
@@ -25,12 +17,8 @@
 
       <div class="mb-3">
         <label for="gameTime" class="form-label">Game Time (seconds)</label>
-        <select
-          id="gameTime"
-          class="form-select bg-secondary text-light border-0"
-          [(ngModel)]="gameTime"
-          name="gameTime"
-        >
+        <select id="gameTime" class="form-select bg-secondary text-light border-0" [(ngModel)]="gameTime"
+          name="gameTime">
           <option [ngValue]="60">60</option>
           <option [ngValue]="120">120</option>
           <option [ngValue]="180">180</option>
@@ -38,13 +26,7 @@
       </div>
 
       <div class="form-check mb-3">
-        <input
-          type="checkbox"
-          class="form-check-input"
-          id="doubleSpeed"
-          [(ngModel)]="doubleSpeed"
-          name="doubleSpeed"
-        />
+        <input type="checkbox" class="form-check-input" id="doubleSpeed" [(ngModel)]="doubleSpeed" name="doubleSpeed" />
         <label class="form-check-label" for="doubleSpeed">
           Double speed when UFOs reach half
         </label>
